@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "npm run lint:js && npm run lint:css",
+    "lint": "npm run lint:js && npm run lint:style",
     "lint:js": "npx eslint src/",
-    "lint:css": "npx stylelint '**/*.vue' --syntax less"
+    "lint:style": "npx stylelint '**/*.vue' --syntax less"
   },
   "husky": {
     "hooks": {

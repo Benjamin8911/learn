@@ -4,9 +4,9 @@ plugins:
 
 extends: 
   - stylelint-config-standard
-  # - stylelint-config-recommended
   - stylelint-config-idiomatic-order
   - stylelint-config-recess-order
+  # - stylelint-config-recommended
   # - stylelint-config-recommended-scss
 
 processors:
