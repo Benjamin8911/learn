@@ -1,0 +1,20 @@
+
+plugins:
+  - stylelint-order
+
+extends: 
+  - stylelint-config-standard
+  # - stylelint-config-recommended
+  - stylelint-config-idiomatic-order
+  - stylelint-config-recess-order
+  # - stylelint-config-recommended-scss
+
+processors:
+  - stylelint-processor-arbitrary-tags
+  # - stylelint-processor-glamorous
+  # - stylelint-processor-markdown
+  # - stylelint-processor-styled-components
+
+rules:
+  at-rule-no-unknown: [true, {ignoreAtRules :[mixin, extend, content]}]
+  no-descending-specificity: null

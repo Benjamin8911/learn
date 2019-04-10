@@ -5,11 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint src"
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:js": "npx eslint src/",
+    "lint:css": "npx stylelint '**/*.vue' --syntax less"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "npm run lint",
+      "commitmsg": "commitlint -e $GIT_PARAMS"
     }
   },
   "repository": {
@@ -23,6 +26,8 @@
   },
   "homepage": "https://github.com/Benjamin8911/learn#readme",
   "devDependencies": {
+    "@commitlint/cli": "^7.5.2",
+    "@commitlint/config-conventional": "^7.5.0",
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.16.0",
@@ -31,6 +36,11 @@
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^5.2.2",
     "husky": "^1.3.1",
+    "stylelint": "^9.10.1",
+    "stylelint-config-idiomatic-order": "^6.2.0",
+    "stylelint-config-recess-order": "^2.0.1",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-processor-arbitrary-tags": "^0.1.0",
     "webpack": "^4.29.6"
   }
 }

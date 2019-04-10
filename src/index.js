@@ -1,1 +1,2 @@
-console.log('index.js')
+var a = 1
+alert(a)

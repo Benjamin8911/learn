@@ -1,0 +1,68 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# See https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+charset = utf-8
+indent_style = tab
+indent_size = 4
+tab_width = 2
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.txt]
+indent_style = tab
+indent_size = 4
+
+[Makefile]
+indent_style = tab
+indent_size = 4
+
+[{*.sh,*.bat}]
+indent_style = space
+indent_size = 4
+
+[*.asm]
+indent_style = space
+indent_size = 4
+
+[*.{c,h,cpp,hpp}]
+indent_style = space
+indent_size = 4
+
+[*{.h,.m,.mm}]
+indent_style = space
+indent_size = 4
+
+[*.go]
+indent_style = space
+indent_size = 4
+
+[*.py]
+indent_style = space
+indent_size = 4
+
+[*.php]
+indent_style = space
+indent_size = 4
+
+[*.java]
+indent_style = space
+indent_size = 4
+
+[*.lua]
+indent_style = space
+indent_size = 4
+
+[{*.js,*.jsx,*.ts,*.tsx,*.html,*.vue,*.css,*.less,*.sass,*.stylus,*.json,*.yml,*.yaml}]
+indent_style = space
+indent_size = 2
+
+[*.{xml.in,xml}]
+indent_style = space
+indent_size = 2
