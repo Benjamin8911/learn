@@ -54,7 +54,7 @@ eslint官方规则： http://eslint.cn/docs/rules/
     "husky": {
       "hooks": {
         "pre-commit": "npm run lint",
-        "commitmsg": "commitlint -e $GIT_PARAMS"
+        "commit-msg": "commitlint -e $GIT_PARAMS"
       }
     }
 > pre-commit后跟着 scripts里的脚本代码，这里对应eslint检查
