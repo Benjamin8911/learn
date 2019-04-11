@@ -20,7 +20,11 @@ Learn about webpack and integrated development
     npm install stylelint stylelint-order -D
 
 > 配置stylelint规则  
-> 这些配置文件都需要安装，并在stylelint配置文件中引入
+> 这些配置文件都需要安装依赖，并在stylelint配置文件中引入
+
+- stylelint-config-standard
+- stylelint-config-idiomatic-order
+- stylelint-config-recess-order
 
 ## 增加eslint检查
 > 添加eslint
@@ -57,7 +61,7 @@ eslint官方规则： http://eslint.cn/docs/rules/
         "commit-msg": "commitlint -e $GIT_PARAMS"
       }
     }
-> pre-commit后跟着 scripts里的脚本代码，这里对应eslint检查
+> pre-commit后跟着 scripts里的脚本代码，这里对应lint检查
 
 ---
 
