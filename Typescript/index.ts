@@ -95,3 +95,17 @@ interface ReadonlyStringArray {
   readonly [index: number]: string;
 }
 let myArray: ReadonlyStringArray = ["Alice", "Bob"];
+
+//  类类型
+//  TypeScript也能够用它来明确的强制一个类去符合某种契约
+interface ClockInterface {
+  currentTime: Date
+  setTimeout(d: Date)
+}
+
+class Clock implements ClockInterface {
+  currentTime: Date
+  setTimeout(d: Date) {
+    this.currentTime = d
+  }
+}
