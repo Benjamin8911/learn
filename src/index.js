@@ -1,3 +1,4 @@
-var a = 1
-alert(a)
-console.log(123123)
+function add (x, y) {
+  return x + y
+}
+module.exports = add
