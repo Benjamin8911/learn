@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "npm run lint:js && npm run lint:style",
     "lint:js": "npx eslint src/",
-    "lint:style": "npx stylelint '**/*.vue' --syntax less"
+    "lint:style": "npx stylelint '**/*.vue' --syntax less",
+    "eslint:report": "rm -rf ./reports && npx eslint src/ -f html -o ./reports/lint-result.html"
   },
   "husky": {
     "hooks": {
