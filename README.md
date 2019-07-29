@@ -65,6 +65,44 @@ eslint官方规则： http://eslint.cn/docs/rules/
 
 ---
 
+# Vue项目
+
+## 入口文件main.js
+
+注意：使用render来替换template参数，render函数参数h，可以理解为html渲染函数，传入根组件App
+
+## 根组件App
+
+标准.vue文件，集合template，script，style三大标签
+
+## html模板文件
+
+创建index.html，创建id=app的div跟踪标签
+
+## webpack配置文件
+
+创建build文件夹用于管理webpack配置文件
+
+### webpack.base.conf.js
+
++ entry，定义入口文件位置
+
++ output，定义构建位置及文件名
+
++ resolve定义文件简写路径和可忽略的后缀
+
+### webpack.dev.conf.js
+
++ 单独设置了处理less文件的方式，后期考虑设置函数自动分辨并处理样式文件
+
++ 使用html-webpack-plugin提取js
+
+### webpack.prod.conf.js
+
++ 引入clean-webpack-plugin构建时先清除dist目录
+
++ 引入mini-css-extract-plugin用于webpack4，提取css文件
+
 
 
 
