@@ -103,6 +103,10 @@ eslint官方规则： http://eslint.cn/docs/rules/
 
 + 引入mini-css-extract-plugin用于webpack4，提取css文件
 
+## webpack-dev-server
+
++ 使用webpack-dev-server启动dev的配置文件
+
 
 
 
