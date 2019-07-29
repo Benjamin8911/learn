@@ -7,13 +7,13 @@
 export default {
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App !'
     }
   }
 }
 </script>
 <style lang="less">
-  h1 {
-    color: red;
+  .hello {
+    font-size: 20px;
   }
 </style>
