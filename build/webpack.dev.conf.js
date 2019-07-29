@@ -1,7 +1,6 @@
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 const webpackConfig = merge(baseWebpackConfig, {
   mode: 'development',
@@ -18,7 +17,6 @@ const webpackConfig = merge(baseWebpackConfig, {
     ]
   },
   plugins: [
-    new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
