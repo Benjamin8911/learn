@@ -4,6 +4,7 @@
   "description": "Learn about webpack and integrated development",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "test": "mocha ./src/test/*.test.js",
     "lint": "npm run lint:js && npm run lint:style",
     "lint:js": "npx eslint src/",
