@@ -15,8 +15,8 @@ const webpackConfig = merge(baseWebpackConfig, {
   devtool: config.build.productionSourceMap ? config.build.devtool : false,
   output: {
     path: config.build.assetsRoot,
-    filename: utils.assetsPath('js/[name].[chunkhash].js'),
-    chunkFilename: utils.assetsPath('js/[id].[chunkhash].js'),
+    filename: utils.assetsPath('js/[name].[chunkhash:5].js'),
+    chunkFilename: utils.assetsPath('js/[id].[chunkhash:5].js'),
     publicPath: './'
   },
   module: {
@@ -42,7 +42,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     new CleanWebpackPlugin(),
     //  提取css文件
     new MiniCssExtractPlugin({
-      filename: utils.assetsPath('css/[name].[contenthash].css')
+      filename: utils.assetsPath('css/[name].[contenthash:5].css')
     }),
     //  优化css
     new OptimizeCSSPlugin({
