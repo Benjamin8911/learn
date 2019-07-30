@@ -24,6 +24,8 @@ module.exports = {
 
     // Source Maps
     productionSourceMap: true,
-    devtool: '#source-map'
+    devtool: '#source-map',
+
+    bundleAnalyzerReport: process.env.npm_config_report
   }
 }
