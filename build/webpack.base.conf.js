@@ -1,5 +1,6 @@
 const path = require('path')
 const config = require('../config')
+const vueLoaderConfig = require('./vue-loader.conf')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 function resolve (dir) {
@@ -25,7 +26,8 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        loader: 'vue-loader',
+        options: vueLoaderConfig
       },
       {
         test: /\.js$/,
