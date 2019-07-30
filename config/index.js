@@ -11,7 +11,10 @@ module.exports = {
     autoOpenBrowser: true,
     useEslint: true,
 
-    devtool: 'cheap-module-eval-source-map'
+    devtool: 'cheap-module-eval-source-map',
+
+    cacheBusting: true,
+    cssSourceMap: true
   },
   build: {
     // Template for index.html
