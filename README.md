@@ -79,6 +79,18 @@ eslint官方规则： http://eslint.cn/docs/rules/
 
 创建index.html，创建id=app的div跟踪标签
 
+## 核心vue-loader和VueLoaderPlugin
+
+> VueLoaderPlugin这个插件是必须的！  
+> 它的职责是将你定义过的其它规则复制并应用到 .vue 文件里相应语言的块。  
+> 例如，如果你有一条匹配 /\.js$/ 的规则，那么它会应用到 .vue 文件里的 \<script>块。
+
+## 工程配置文件config/index.js
+
+分为dev和build两个部分，在内部实现不同的参数以供webpack各环境的配置文件使用。
+
++ devtool此选项控制是否以及如何生成source map
+
 ## webpack配置文件
 
 创建build文件夹用于管理webpack配置文件
@@ -93,20 +105,35 @@ eslint官方规则： http://eslint.cn/docs/rules/
 
 ### webpack.dev.conf.js
 
++ mode设置为development，会将 DefinePlugin 中 process.env.NODE_ENV 的值设置为 development。启用 NamedChunksPlugin 和 NamedModulesPlugin。
+
 + 单独设置了处理less文件的方式，后期考虑设置函数自动分辨并处理样式文件
 
 + 使用html-webpack-plugin提取js
 
++ 使用HotModuleReplacementPlugin开启HRM
+
++ 使用NamedModulesPlugin，在热加载时直接显示更新模块的文件名
+
 ### webpack.prod.conf.js
+
++ mode设置为production，会将 DefinePlugin 中 process.env.NODE_ENV 的值设置为 production。启用 FlagDependencyUsagePlugin, FlagIncludedChunksPlugin, ModuleConcatenationPlugin, NoEmitOnErrorsPlugin, OccurrenceOrderPlugin, SideEffectsFlagPlugin 和 TerserPlugin。
 
 + 引入clean-webpack-plugin构建时先清除dist目录
 
 + 引入mini-css-extract-plugin用于webpack4，提取css文件
 
++ 引入OptimizeCSSPlugin用于优化压缩提取的css文件，配合mini-css-extract-plugin或extract-text-webpack-plugin（webpack4以下）使用
+
++ 使用[webpack.optimize.CommonsChunkPlugin](https://webpack.docschina.org/plugins/commons-chunk-plugin/)提取公共模块(webpack4以下)
+
++ 持久化储存使用webpack.HashedModuleIdsPlugin，根据模块相对路径生成的hash作为chunk id，这样可以保持短和稳定
+
++ webpack4新增optimization选项
+
 ## webpack-dev-server
 
 + 使用webpack-dev-server启动dev的配置文件
-
 
 
 
