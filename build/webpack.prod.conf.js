@@ -71,4 +71,3 @@ const webpackConfig = merge(baseWebpackConfig, {
 })
 
 module.exports = webpackConfig
-console.log(process.NODE_ENV)
