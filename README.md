@@ -131,6 +131,8 @@ eslint官方规则： http://eslint.cn/docs/rules/
 
 + webpack4新增optimization选项
 
++ 增加可视化资源分析工具webpack-bundle-analyzer
+
 ## webpack-dev-server
 
 + 使用webpack-dev-server启动dev的配置文件
