@@ -129,7 +129,7 @@ eslint官方规则： http://eslint.cn/docs/rules/
 
 + 持久化储存使用webpack.HashedModuleIdsPlugin，根据模块相对路径生成的hash作为chunk id，这样可以保持短和稳定
 
-+ webpack4新增optimization选项
++ webpack4新增optimization选项，设置splitChunks选项，chunks参数为all，即异步，公共模块都提取
 
 + 增加可视化资源分析工具webpack-bundle-analyzer
 
@@ -137,5 +137,19 @@ eslint官方规则： http://eslint.cn/docs/rules/
 
 + 使用webpack-dev-server启动dev的配置文件
 
+---
+
+## vue-router
+
+使用异步按需加载
+
+    const Hello = () => import('@/components/Hello)
+
+控制台语法报错**Support for the experimental syntax 'dynamicImport' isn't currently enabled**
+需安装babel-plugin-syntax-dynamic-import插件，并在webpack基础配置文件babel-loader配置options-plugins选项
+
+IDE报语法检查错误，需安装babel-eslint，并修改.eslintrc.yml文件
+    parserOptions:
+        parser: babel-eslint
 
 
