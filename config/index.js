@@ -8,7 +8,7 @@ module.exports = {
     // Dev Server Settings
     host: 'localhost',
     port: 8080,
-    autoOpenBrowser: true,
+    autoOpenBrowser: false,
     useEslint: true,
 
     devtool: 'cheap-module-eval-source-map',
