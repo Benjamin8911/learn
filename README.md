@@ -91,6 +91,19 @@ eslint官方规则： http://eslint.cn/docs/rules/
 
 + devtool此选项控制是否以及如何生成source map
 
+---
+
+## webpack构建流程
+### 初始化
+> 解析webpack配置参数，合并从shell传入和webpack.config.js文件里配置的参数，生产最后的配置结果。
+> 注册所有配置的插件，好让插件监听webpack构建生命周期的事件节点，以做出对应的反应。
+### 编译
+> 从配置的entry入口文件开始解析文件构建AST语法树，找出每个文件所依赖的文件，递归下去。
+> 在解析文件递归的过程中根据文件类型和loader配置找出合适的loader用来对文件进行转换。
+### 输出
+> 递归完后得到每个文件的最终结果，根据entry配置生成代码块chunk。
+> 输出所有chunk到文件系统。
+
 ## webpack配置文件
 
 创建build文件夹用于管理webpack配置文件
