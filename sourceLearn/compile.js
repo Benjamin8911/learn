@@ -48,7 +48,8 @@ class Compile {
             this[dir] && this[dir](node, this.$vm, exp)
           }
           if (this.isEvent(attrName)) {
-            console.log('123')
+            const dir = attrName.substring(1)
+            this.eventHandler(node, this.$vm, exp, dir)
           }
         })
       } else if (this.isInterpolation(node)) {
@@ -88,6 +89,36 @@ class Compile {
 
   textUpdater(node, value) {
     node.textContent = value
+  }
+
+  html(node, vm, exp) {
+    this.update(node, vm, exp, 'html')
+  }
+
+  htmlUpdater(node, value) {
+    node.innerHTML = value
+  }
+
+  // 双绑方法
+  model(node, vm, exp) {
+    // 设置input的value属性
+    this.update(node, vm, exp, 'model')
+    // 视图对模型的响应
+    node.addEventListener('input', e => {
+      vm[exp] = e.target.value
+    })
+  }
+
+  modelUpdater(node, value) {
+    node.value = value
+  }
+
+  // 事件处理器
+  eventHandler(node, vm, exp, dir) {
+    let fn = vm.$options.methods && vm.$options.methods[exp]
+    if (dir && fn) {
+      node.addEventListener(dir, fn.bind(vm))
+    }
   }
 
   isDirective(attr) {
