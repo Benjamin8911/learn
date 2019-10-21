@@ -1,4 +1,6 @@
 const path = require('path')
+const config = require('../config')
+const vueLoaderConfig = require('./vue-loader.conf')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 function resolve (dir) {
@@ -10,9 +12,9 @@ module.exports = {
     app: './src/main.js'
   },
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: config.build.assetsRoot,
     filename: '[name].js',
-    publicPath: '/'
+    publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.build.assetsPublicPath
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
@@ -24,24 +26,37 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        loader: 'vue-loader',
+        options: vueLoaderConfig
       },
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')],
+        options: {
+          plugins: ["babel-plugin-syntax-dynamic-import"]
+        }
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        loader: 'url-loader'
+        loader: 'url-loader',
+        options: {
+          limit: 10000
+        }
       },
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
-        loader: 'url-loader'
+        loader: 'url-loader',
+        options: {
+          limit: 10000
+        }
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        loader: 'url-loader'
+        loader: 'url-loader',
+        options: {
+          limit: 10000
+        }
       }
     ]
   },
