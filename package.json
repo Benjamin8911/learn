@@ -75,6 +75,20 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
+    "co-redis": "^2.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.10.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-bouncer": "^6.0.4",
+    "koa-jwt": "^3.6.0",
+    "koa-multer": "^1.0.2",
+    "koa-redis": "^4.0.0",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.12.3",
+    "koa-static": "^5.0.0",
+    "koa2-cors": "^2.0.6",
+    "redis": "^2.8.0",
+    "trek-captcha": "^0.4.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.7"
   }
