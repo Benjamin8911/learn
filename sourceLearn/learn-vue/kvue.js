@@ -5,7 +5,7 @@ class Kvue {
     // 数据响应化
     this.observe(this.$data)
 
-    //
+    // 依赖收集
     new Compile(options.el, this)
     // created执行
     if (options.created) {
@@ -31,6 +31,7 @@ class Kvue {
 
     Object.defineProperty(obj, key, {
       get() {
+        // Dep.target静态属性由watcher设置
         Dep.target && dep.addDep(Dep.target)
         return val
       },
@@ -44,7 +45,6 @@ class Kvue {
       }
     })
   }
-
   // 代理vm
   proxyData(key) {
     Object.defineProperty(this, key, {
