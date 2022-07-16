@@ -12,12 +12,6 @@
     "lint:style": "npx stylelint '**/*.vue' --syntax less",
     "eslint:report": "rm -rf ./reports && npx eslint src/ -f html -o ./reports/lint-result.html"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint",
-      "commit-msg": "commitlint -e $GIT_PARAMS"
-    }
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Benjamin8911/learn.git"
